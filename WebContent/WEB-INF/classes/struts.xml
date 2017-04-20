@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+ 	<constant name="struts.multipart.maxSize" value="9000000000"/>
+	<package name="ShortRent" extends="struts-default" >
+		<!-- 	验证码 -->
+		<action name="verification" class="com.fudan.action.VerificationAction">
+	     	<result name="success" type="stream">
+		     	<param name="inputName">inputStream</param>
+		     	<param name="bufferSize">2048</param>
+	     	</result>
+   		</action>
+		<!-- 		加在主页面 -->
+   		<action name="default" class="com.fudan.action.DefaultAction" method="execute">
+	     	<result name="success" >/welcome.jsp</result>
+	     	<result name="error"></result>
+   		</action>
+<!--    		与房屋相关action -->
+   		<action name="HouseAction" class="com.fudan.action.HouseAction">
+<!--    		到房屋详细页面 -->
+	     	<result name="toHouseDetail" >/showHouse.jsp</result>
+<!-- 	     	测试 -->
+	     	<result name="showSearchResult" >/search.jsp</result>
+	     	<result name="error">/search.jsp</result>
+	     	<result name="edit">/editRoom.jsp</result>
+   		</action>
+<!--    		用户相关action -->
+   		<action name="UserAction" class="com.fudan.action.UserAction">
+<!--    		到房屋管理页面 -->
+	     	<result name="toHouseAdmin" >/user/user-manage.jsp</result>
+<!-- 	     	测试 -->
+	     	<result name="error">/search.jsp</result>
+   		</action>
+
+<!--    		裁剪图片 -->
+   		<action name="CutImage" class="com.fudan.action.CutImage">
+<!--    		房屋图片裁剪成功 -->
+	     	<result name="success">/uploadPics.jsp</result>
+<!-- 	     	头像裁剪成功 -->
+	     	<result name="userSuccess" type="redirect">/default.action</result>
+	     	<result name="error"></result>
+   		</action>
+	</package>
+	<package name="day03-default" extends="json-default">
+	    <!-- log out -->
+	    <action name="logout" class="com.fudan.action.UserAction"  method="logout">
+			<result name="logout"  type="json"></result>
+			<result name="error"  type="json"></result>
+   		</action>
+	       		 <!-- 回复相关action -->
+   		<action name="ReplyAction" class="com.fudan.action.ReplyAction" >
+			<result name="success"  type="json"></result>
+			<result name="error"  type="json"></result>
+   		</action>
+	   <!-- 文件上传 -->
+	     <action name="upload" class="com.fudan.action.UploadAction">
+	       <interceptor-ref name="fileUpload">
+	       		<param name="allowedTypes">image/png,image/jpg,image/jpeg,image/gif</param>
+	       		<param name="maximumSize">10000000000000</param>
+	       </interceptor-ref>
+	       <interceptor-ref name="defaultStack"/>
+<!-- 	       结果相同传参不同 -->
+	       <result name="input">/uploadPics.jsp</result>
+	       <result name="error">/uploadPics.jsp</result>
+	       <!-- 	     	头像上传成功 -->
+	     	<result name="userSuccess">/cutUser.jsp</result>
+	       <result name="success">/cutPics.jsp</result>
+	     </action>
+<!-- 	     用户登录 -->
+	     <action name="login" class="com.fudan.action.UserAction" method="login">
+	     	<result name="welcome" type="json"></result>
+	     	<result name="error" type="json"></result>
+   		</action>
+<!--    		用户登录 -->
+   		<action name="register" class="com.fudan.action.UserAction" method="add">
+	     	<result name="welcome" type="json"></result>
+	     	<result name="error" type="json"></result>
+   		</action>
+<!--    		发布房屋 -->
+   		<action name="newHouse" class="com.fudan.action.HouseAction" method="build">
+			<result name="success" type="json">
+	     		<param name="root">dataMap</param>
+	     	</result>
+	     	<result name="error" type="json">
+	     		<param name="root">dataMap</param>
+	     	</result>
+   		</action>
+<!--    		修改房屋 -->
+   		<action name="updateRoom" class="com.fudan.action.HouseAction" method="update">
+			<result name="success" type="json">
+	     		<param name="root">dataMap</param>
+	     	</result>
+	     	<result name="error" type="json">
+	     		<param name="root">dataMap</param>
+	     	</result>
+   		</action>
+		<!-- 下订单 -->
+	     <action name="addOrder" class="com.fudan.action.OrderAction" method="add">
+	     	<result name="success" type="json">
+	     		<param name="root">result</param>
+	     	</result>
+	     	<result name="error" type="json">
+	     		<param name="root">result</param>
+			</result>
+   		</action>
+
+     </package>
+     
+		<package name="shortRent_user" extends="json-default" namespace="/user">
+	    <!-- 用户修改资料 -->
+   		<action name="toUserUpdate" class="com.fudan.action.UserAction" method="toUpdate">
+			<result name="success">/user/user.jsp</result>
+   		</action>
+   		<action name="userUpdate" class="com.fudan.action.UserAction" method="update">
+			<result name="success" type="json"></result>
+	     	<result name="error" type="json"></result>
+   		</action>
+   		<!-- 发站内信 -->
+   		<action name="toMessageSend" class="com.fudan.action.MessageAction" method="toSend">
+			<result name="success">/user/message-send.jsp</result>
+   		</action>
+   		<action name="messageSend" class="com.fudan.action.MessageAction" method="send">
+			<result name="success" type="json"></result>
+	     	<result name="error" type="json"></result>
+   		</action>
+   		<!-- 房屋管理 -->
+   		<action name="toHouseManage" class="com.fudan.action.HouseAction" method="toHouseManage">
+			<result name="success">/user/house.jsp</result>
+   		</action>
+   		<!-- 我收到的站内信 -->
+   		<action name="toMessage" class="com.fudan.action.MessageAction" method="toMessage">
+			<result name="success">/user/message.jsp</result>
+   		</action>
+   		<!-- 我是房东的订单 -->
+   		<action name="toOrderOwner" class="com.fudan.action.OrderAction" method="toOrderOwner">
+			<result name="success">/user/order-owner.jsp</result>
+   		</action>
+   		<!-- 我是房客的订单 -->
+   		<action name="toOrderUser" class="com.fudan.action.OrderAction" method="toOrderUser">
+			<result name="success">/user/order-user.jsp</result>
+   		</action>
+   		<!-- 去管理员审核房屋 -->
+   		<action name="toHouseAdmin" class="com.fudan.action.HouseAction" method="toHouseAdmin">
+			<result name="success">/user/house-manage.jsp</result>
+   		</action>
+   		<!-- 去用户管理 -->
+   		<action name="toUserAdmin" class="com.fudan.action.UserAction" method="toUserAdmin">
+			<result name="success">/user/user-manage.jsp</result>
+   		</action>
+   		<!-- 删除站内信 -->
+   		<action name="msgDelete" class="com.fudan.action.MessageAction" method="delete">
+			<result name="success">/user/message.jsp</result>
+   		</action>
+   		<!-- 阅读站内信 -->
+   		<action name="msgRead" class="com.fudan.action.MessageAction" method="read">
+			<result name="success">/user/message.jsp</result>
+   		</action>
+   		<!-- 删除房屋 -->
+   		<action name="houseDelete" class="com.fudan.action.HouseAction" method="delete">
+			<result name="success">/user/house.jsp</result>
+   		</action>
+   		<!-- 拒绝订单 -->
+   		<action name="orderRefuse" class="com.fudan.action.OrderAction" method="refuseOrder">
+			<result name="success">/user/order-owner.jsp</result>
+   		</action>
+   		<!-- 接受订单 -->
+   		<action name="orderAccept" class="com.fudan.action.OrderAction" method="acceptOrder">
+			<result name="success">/user/order-owner.jsp</result>
+   		</action>
+   		<!-- 取消订单 -->
+   		<action name="orderCancel" class="com.fudan.action.OrderAction" method="cancelOrder">
+			<result name="success">/user/order-user.jsp</result>
+   		</action>
+   		<!-- 完成订单 -->
+   		<action name="orderFinish" class="com.fudan.action.OrderAction" method="finishOrder">
+			<result name="success">/user/order-user.jsp</result>
+   		</action>
+   		<!-- 发表评论 -->
+   		<action name="comment" class="com.fudan.action.CommentAction" method="add">
+			<result name="success" type="json"></result>
+	     	<result name="error" type="json"></result>
+   		</action>
+   		<!-- 接受房屋 -->
+   		<action name="houseAccept" class="com.fudan.action.HouseAction" method="acceptHouse">
+			<result name="success">/user/house-manage.jsp</result>
+   		</action>
+   		<!-- 拒绝房屋 -->
+   		<action name="houseRefuse" class="com.fudan.action.HouseAction" method="refuseHouse">
+			<result name="success">/user/house-manage.jsp</result>
+   		</action>
+   		</package>
+</struts>

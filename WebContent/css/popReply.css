@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+
+/* general */
+body {
+	margin:0px;
+}
+
+/* background */
+#popback {
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	position:absolute;
+	filter: Alpha(opacity=50);
+	opacity:0.5; 
+	background:#000000;
+	display:none;
+	z-index:90;
+}
+
+/* header */
+#header {
+	margin:5px;
+}
+
+#innerHeader {
+	margin:0 2rem;
+	float:right;
+}
+
+/* popmeu */
+#popReply {
+	position:absolute;
+	width:80%;
+	margin:-50% 20% 20% 20%;
+	padding:2rem;
+	border-radius:2rem;
+	display:none; 
+	background:#FFFFFF;
+	z-index:90;
+}
+
+.closePop {
+	color:red;
+	position:absolute;
+	right:1.5rem;
+	top:0.75rem;
+}
+
+.prompt {
+	color:red;
+	font-size:0.75rem;
+}
+
+#popReply input[type=text], input[type=password] {
+	height:1.5rem;
+}
+.inputLabel{
+    width:80%;
+}
+
+.blue-color:hover{
+    background-color:mediumspringgreen ;
+    color: white;
+    cursor: pointer;
+}
+
+.blue-color{
+	background: #60cd9b;
+    color: white;
+	font-size:1rem;
+	margin-left:1rem;
+	padding-bottom: 3%;
+    padding-top: 3%;
+    padding-right: 5%;
+    padding-left: 5%;
+    border-radius: 5px;
+}

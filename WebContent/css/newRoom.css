@@ -1,0 +1,94 @@
+.col-sm-4 {
+	height: 70%;
+	min-height: 500px;
+}
+
+.form-area {
+	height: 60%;
+	min-height: 300px;
+}
+
+.button-area {
+	margin-top: 10%;
+	height: 35%;
+	min-height: 175px;
+}
+
+.form-wrapper {
+	margin: 3px;
+	height: 100%;
+	min-height: 500px;
+	margin-bottom: 30px;
+}
+#pic{
+	color:white;
+}
+.but {
+	margin: 8% -15% 0% 20%;
+}
+
+#ver-pic {
+	margin-top: 5%;
+}
+
+#verification {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 0 none;
+	background-color: rgba(255, 255, 255, 0.4);
+	color: white;
+	margin: 6% 2% 0% 6%;
+	width: 50%;
+}
+
+#dayPrice, #address, #name, #area,#roomDesc,#useRule,#payRule,#facility {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 0 none;
+	background-color: rgba(255, 255, 255, 0.4);
+	color: white;
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 5%;
+}
+#area,#useRule{
+    margin-top: -2%;
+}
+#address {
+	margin-bottom: 4%;
+}
+#bedType{
+	float:left;
+	margin-top:5%;
+}
+#kind{
+	float:right;
+	margin-top:5%;
+	margin-right:20%;
+}
+#bill{
+	margin-bottom:5%;
+	margin-top:5%;
+	
+}
+#upload{
+	margin-left:50%;
+	margin-top:-20%;
+}
+.input_styled {
+	color: white;
+	margin-left: 20%;
+}
+.rowRadio,#bedroomNum{
+	margin-top:3%;
+}
+.select_styled {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.field_select {
+	color: white;
+	margin-left: 20%;
+}

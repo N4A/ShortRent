@@ -1,0 +1,39 @@
+#title{
+	padding:15px;
+	margin-bottom:5%;
+}
+#up_title{
+	color:white;
+	margin-left:20%;
+}
+#down_title{
+	color:white;
+	margin-left:40%;
+}
+#upload_file{
+ width:20%;
+ margin:1% 60% 0% 0%;
+ float:right;	
+}
+.boxed-yellow{
+	padding:15px;
+}
+#icon{
+	margin-left:8%;
+}
+#cut{
+	margin-top:5%;
+	padding-top:5%;
+	padding-left:7%;
+	height:750px;
+	
+}
+#cutArea{
+  margin:0% auto auto auto;
+  height:600px;
+  width:800px; 	
+}
+#submit_cut{
+	margin-top:15px;
+	margin-left:10%;
+}

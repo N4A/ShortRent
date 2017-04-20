@@ -1,0 +1,59 @@
+#search_option{
+	padding:3% 0 1% 9%;
+	height:450px;
+}
+#address,#checkin,#checkout,#dayPrice,#area,.select_styled{
+	background-color:rgba(255,255,255,0.7);
+	font-size:20spx;
+}
+#checkin,#checkout{
+	width:25%;
+	height:30px;
+}#address{
+	width:60%;
+	margin:0% 2% 3% 0%;
+}
+.select_styled{
+	width:24%;
+}
+#dayPrice,#area{
+	width:30%;
+	margin-top:3%;
+	margin-bottom:3%;
+}
+#area{
+	margin-left:17%;
+}
+#orderBy{
+	width:40%;
+}
+.show_time,#title{
+	font-size:18px;
+}
+#outTime{
+	margin-left:10%;
+}
+#search{
+	width:13%;
+}
+.show_house{
+	margin-top:20px;
+	margin-bottom:10px;
+	height:380px;
+	color:white;
+	font-size:20px;
+	padding:2%;
+}
+.show_pic{
+	width:90%;
+	margin:0% 5% 6% 5%;
+	height:80%;
+	padding-top:5%;
+}
+.f_right{
+	float:right;
+}
+.turn_over{
+	margin-top: 3%;
+	margin-bottom:2%;
+}

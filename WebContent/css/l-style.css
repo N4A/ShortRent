@@ -1,0 +1,199 @@
+@CHARSET "UTF-8";
+
+/* 对bootstrap和modern-touch在本项目中实际应用的补充 */
+
+/* 垂直弹出菜单功能
+ * 1.使用modern-touch的垂直菜单为基础，在ul上添加clearfix和dropdown类
+ * 2.在有子菜单的li下添加ul，此时鼠标移动上去应该出现下拉菜单，但位置和背景均不太好
+ * 3.在子菜单的ul上添加l-submenu类，本css即在此基础上做出修改
+ */
+.l-submenu>li {
+	margin-left: 85px;   /* 把子菜单的li拉到原菜单的右边 */
+}
+
+.l-submenu>li.first a {
+	margin-top: -78px;   /* 把子菜单的li拉到和原菜单相应项上端对齐 */
+}
+
+.l-submenu>li>a {
+	width: 90px;         /* 使背景与列表项宽度对齐 */
+	height: 42px;        /* 设置子菜单项高度 */
+	padding: 15px;       /* 设置子菜单项中字的位置 */
+}
+
+.l-menu {
+	width: 84px;         /* 使主菜单背景与链接区域对齐 */
+}
+
+.l-menu>li>a {
+	padding: 22px 27px 23px 27px;   /* 不明，相当于禁用了之前的padding属性。可以用来改变方框的大小 *//* 参见style.css#931 */
+}
+
+.l-menu>li>a:hover,
+.l-menu>li.active>a {
+	background: #60cd9b;   /* 主菜单无论何种情况都是原来的颜色 */
+}
+
+ .l-menu>li.active ul.l-submenu a {
+	background: #FFFFFF;   /* 子菜单背景为白色，无论主菜单是否被选中 */
+}
+
+ .l-menu>li.active ul.l-submenu a:hover {
+	background: #60cd9b;   /* 子菜单hover时变色 */
+}
+
+.l-menu ul:before {
+	display: none;         /* 去除hover时下方小三角形 */
+}
+
+/* 纯色可调内容框 
+ * 该框作为显示内容的背景
+ * 使用时在div上增加类 l-box,l-box-*即可
+ */
+.l-box {
+	color: white;
+	min-height: 320px;	
+}
+
+.l-box-yellow {
+	background: #ebc85e;
+}
+
+.l-box-red {
+	background: #e87352;
+}
+
+/* 折叠框
+ * 当内容被折叠时才显示
+ * 框本身的div加上l-foldbox，不需要l-box,
+ * 内容中包含span.l-foldbox-title,l-foldbox-btn，用于显示标题和展开
+ */
+.l-foldbox {
+	color: white;
+}
+
+.l-foldbox-title {
+	font-size: 1rem;
+	text-align: center;
+	padding: 1rem;
+	font-family: "Microsoft YaHei";
+	font-weight: bold;
+}
+
+.l-foldbox-btn {
+	float: right;
+	margin-top: -12px;
+	margin-right: -12px;
+}
+
+.l-box-foldbtn {  /* 在原来的box中用于收起的按钮 */
+	float: right;
+	margin-top: 8px;
+	margin-right: 8px;
+}
+
+/* 表格
+ * 后台数据管理之类显示的表格
+ * 使用时在table上加上类 l-table即可
+ */
+.l-table {
+	margin: auto;
+}
+
+.l-table caption {
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin: 1rem;
+}
+
+.l-table th {
+	font-weight: bold;
+	font-size: 0.8rem;
+	padding: 1rem;
+	margin: 0.5rem;
+}
+
+.l-table td {
+	font-size: 0.8rem;
+	padding : 0.5rem 0.75rem;
+}
+
+/* 分页
+ * 在主题提供的含 tf-pagination类的div上增加 l-pagination,l-pagination-*类即可
+ */
+.l-pagination {
+	margin: auto;
+	width: 155px;    /* 与inner宽度相等以居中对齐 */
+}
+
+.l-pagination .inner {
+	margin: 1rem auto;
+}
+
+.l-pagination-yellow .inner a.page_current, 
+.l-pagination-yellow .inner a.page_prev:hover,
+.l-pagination-yellow .inner a.page_next:hover, 
+.l-pagination-yellow .inner a.page-numbers:hover {
+	background: #ebc85e;
+}
+
+/* 表单 
+ * 在form上增加类 l-form即可
+ * 此外，在radio上增加类 l-radio，在主题提供的submit按钮上设置相应的id
+ */
+.l-form {
+	font-size: 0.8rem;
+}
+
+.l-form>div {
+	width: 30rem;
+	padding: 1rem;
+	font-family: 'Microsoft YaHei';
+	margin: 0rem;
+}
+
+.l-form input[type="text"],
+.l-form input[type="password"] {
+	height: 1.75rem;
+	width: 37rem;
+	background: rgba(255,255,255,0.4);
+	margin-top: -0.5rem;
+}
+
+.l-form input[type="radio"] {
+	width: 0.8rem;
+	height: 0.8rem;
+}
+
+.l-form textarea {
+	height: 10rem;
+	background: rgba(255,255,255,0.4);
+}
+
+.l-form .l-radio {
+	padding: 0 1rem;
+}
+
+#l-user-submit {
+	margin-top: 10rem;
+	margin-left: -29rem;
+	margin-bottom: 1rem;
+}
+
+#l-message-submit {
+	margin: 1rem;
+}
+
+#l-error-prompt-user {  /* 用户修改资料表单的提示信息显示区 */
+	color: red;
+	float: right;
+	margin-top: 0.3rem;
+	margin-right: 3rem;
+}
+
+#l-error-prompt-message {  /* 发站内信的提示信息显示区 */
+	color: white;
+	float: right;
+	margin-top: -3.7rem;
+	margin-right: 3rem;
+}

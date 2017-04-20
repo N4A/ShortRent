@@ -1,0 +1,133 @@
+#submit_order {
+	height: 300px;
+	padding: 5%;
+}
+
+#submit_order h4 {
+	color: white;
+}
+
+#checkin, #checkout {
+	background-color: white;
+	width: 60%;
+	height: 28px;
+	margin-left: 1%;
+}
+
+.show_time {
+	color: white;
+	font-size: 18px;
+}
+
+#show_dayPrice, #show_totalPrice {
+	color: white;
+	font-size: 18px;
+	text-align: center;
+}
+
+#dayPrice {
+	font-size: 22px;
+	color: cornflowerblue;
+}
+
+#totalPrice {
+	font-size: 24px;
+	color: cornflowerblue;
+}
+
+#verification {
+	width: 40%;
+	margin-left: 20%;
+	background-color: white;
+	height: 20px;
+}
+#owner_info h4{
+    color: white;
+}
+#other_house h4 {
+	color: white;
+}
+
+#other_house {
+	color: white;
+	font-size: 18px;
+	padding: 1rem;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+#owner_info{
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 2%;
+}
+.f_right {
+	float: right;
+	margin-right: 30%;
+}
+
+#subOrder {
+	width: 40%;
+	margin-left: 20%;
+	margin-top: 3%;
+}
+
+.comment, .reply {
+	border-bottom: 2px slategrey dashed;
+	padding-bottom: 1%;
+	margin-bottom: 1%;
+}
+.boxed-yegreen{
+    background-color: yellowgreen;
+}
+#comment_wrapper {
+	padding: 3%;
+}
+
+#house_comment {
+	margin-top: 3%;
+	font-size: 18px;
+	padding: 1rem;
+    margin-bottom: 3%;
+}
+
+#house_comment h4 {
+	color: yellow;
+}
+
+.comment_content, .reply_content {
+	margin-left: 2em;
+	margin-bottom: 0.5em;
+	color: white;
+}
+
+.boxed-pale {
+	background-color: palegreen;
+}
+
+#house_info h4 {
+	color: yellow;
+}
+
+.btn-yellow {
+	margin-left: 80%;
+	width: 12%;
+	height: 5%;
+	margin-top: 0;
+}
+
+#house_info {
+	color: white;
+	font-size: 18px;
+	margin: 1%;
+}
+
+#ess_info {
+	padding: 1rem;
+}
+
+#extra_info {
+	padding: 1rem;
+	margin-top: 3%;
+}
