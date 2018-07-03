@@ -19,7 +19,3 @@ jdk1.8, tomcat8
 2. 修改DbUtil文件下数据库地址
 3. 使用eclipse将项目导出war包
 4. 配置到tomcat webapps目录下。
-
-## 演示
-
-http://120.76.125.35/ShortRent/
